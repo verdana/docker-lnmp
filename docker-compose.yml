@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.5'
 services:
     nginx:
         container_name: "docker-nginx"
@@ -15,7 +15,7 @@ services:
         environment:
             - TZ=Asia/Shanghai
         networks:
-            docker_net:
+            backend:
                 ipv4_address: ${NGINX_IP}
 
     php:
@@ -29,7 +29,7 @@ services:
             - mysql:mysql
             - redis:redis
         networks:
-            docker_net:
+            backend:
                 ipv4_address: ${PHP72_IP}
 
     mysql:
@@ -44,7 +44,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         networks:
-            docker_net:
+            backend:
                 ipv4_address: ${MYSQL_IP}
 
     redis:
@@ -58,7 +58,7 @@ services:
         sysctls:
             net.core.somaxconn: 512
         networks:
-            docker_net:
+            backend:
                 ipv4_address: ${REDIS_IP}
 
     portainer:
@@ -70,11 +70,12 @@ services:
             - /var/run/docker.sock:/var/run/docker.sock:cached
             - $PWD/portainer/:/data:cached
         networks:
-            docker_net:
+            backend:
                 ipv4_address: ${PORTAINER_IP}
 
 networks:
-    docker_net:
+    backend:
+        name: nmp-net
         driver: bridge
         ipam:
             driver: default
