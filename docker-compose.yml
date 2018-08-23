@@ -42,7 +42,7 @@ services:
             - $PWD/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro,cached
             - $PWD/mysql/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf:ro,cached
         environment:
-            MYSQL_ROOT_PASSWORD: "mysql"
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         networks:
             docker_net:
                 ipv4_address: ${MYSQL_IP}
