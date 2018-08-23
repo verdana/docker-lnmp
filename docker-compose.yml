@@ -9,7 +9,7 @@ services:
         volumes:
             - $PWD/public:/var/www/html:rw,cached
             - $PWD/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro,cached
-            - $PWD/log/nginx:/var/log/nginx:rw,cached
+            - $PWD/nginx/logs:/var/log/nginx:rw,cached
         links:
             - php:php
         environment:
@@ -38,9 +38,9 @@ services:
         ports:
             - 3306:3306
         volumes:
-            - $PWD/mysql/data:/var/lib/mysql
-            - $PWD/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
-            - $PWD/mysql/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+            - $PWD/mysql/data:/var/lib/mysql:rw,cached
+            - $PWD/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro,cached
+            - $PWD/mysql/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf:ro,cached
         environment:
             MYSQL_ROOT_PASSWORD: "mysql"
         networks:
