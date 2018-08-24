@@ -2,7 +2,7 @@ FROM php:7.2-fpm
 
 RUN \
 docker-php-ext-install pdo_mysql sockets \
-&& docker-php-ext-enable opcache pdo_mysql sockets \
+&& docker-php-ext-enable opcache \
 # -------- redis -------- #
 && curl 'http://pecl.php.net/get/redis' -o /tmp/redis-latest.tgz \
 && cd /tmp \
