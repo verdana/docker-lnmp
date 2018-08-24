@@ -20,9 +20,9 @@ services:
 
     php:
         container_name: "docker-php"
-        image: php:7.2-rebuild
-        build:
-            context: ./php
+        image: verdana/php:latest
+        #        build:
+        #    context: ./php
         volumes:
             - $PWD/public:/var/www/html
         links:
