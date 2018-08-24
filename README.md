@@ -2,7 +2,7 @@
 
 > 又多了一个...
 
-## 包含组件
+## 核心组件
 
 - [PHP](http://php.net)
 - [Nginx](http://nginx.org)
@@ -12,4 +12,13 @@
 - [MongoDB](https://www.mongodb.com)
 - [Portainer](https://portainer.io)
 
+## PHP 扩展
+
+- [Zend Opcache](http://php.net/opcache)
+- [xdebug](https://xdebug.org)
+- [php_mysql](http://php.net/pdo_mysql)
+- [phpredis](https://github.com/phpredis/phpredis)
+- [sockets](http://php.net/sockets)
+
+## 编译
 
