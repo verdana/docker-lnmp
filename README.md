@@ -4,12 +4,12 @@
 
 ## 包含组件
 
-- PHP 7.2+
-- Nginx
-- MySQL
-- PostgreSQL
-- Redis
-- MongoDB
-- Portainer
+- [PHP](http://php.net)
+- [Nginx](http://nginx.org)
+- [MySQL](http://mysql.com)
+- [PostgreSQL](https://www.postgresql.org)
+- [Redis](https://redis.io)
+- [MongoDB](https://www.mongodb.com)
+- [Portainer](https://portainer.io)
 
 
