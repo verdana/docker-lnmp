@@ -21,8 +21,8 @@ services:
     php:
         container_name: "docker-php"
         image: verdana/php:latest
-        #        build:
-        #    context: ./php
+#       build:
+#           context: ./php
         volumes:
             - $PWD/public:/var/www/html
         links:
