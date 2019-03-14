@@ -15,4 +15,3 @@ docker-php-ext-install pdo_mysql sockets \
 && pecl install xdebug-latest.tgz \
 && rm -rf xdebug-latest.tgz \
 && docker-php-ext-enable xdebug
-
